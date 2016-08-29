@@ -1,0 +1,42 @@
+module fast-${artifactId} {
+    yang-version 1;
+    namespace "urn:fast:${artifactId.replaceAll("-", ":")}";
+    prefix "fast-${artifactId}";
+
+    import config {
+        prefix config;
+        revision-date 2013-04-05;
+    }
+
+    import fast-system {
+        prefix fast-system;
+        revision-date 2015-12-17;
+    }
+
+    description
+        "Service definition for fast-system project";
+
+    revision "2015-12-17" {
+        description
+            "Initial revision";
+    }
+
+    identity fast-${artifactId} {
+        base config:module-type;
+        config:java-name-prefix ${classPrefix};
+    }
+
+    augment "/config:modules/config:module/config:configuration" {
+        case fast-${artifactId} {
+            when "/config:modules/config:module/config:type = 'fast-${artifactId}'";
+            container fast-system {
+                uses config:service-ref {
+                    refine type {
+                        mandatory true;
+                        config:required-identity fast-system:fast-system;
+                    }
+                }
+            }
+        }
+    }
+}

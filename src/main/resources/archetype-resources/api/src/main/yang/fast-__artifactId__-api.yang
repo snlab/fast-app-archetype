@@ -1,0 +1,9 @@
+module fast-${artifactId}-api {
+    yang-version 1;
+    namespace "urn:fast:${artifactId.replaceAll("-", ":")}:api";
+    prefix "fast-${artifactId}-api";
+
+    revision "2015-12-17" {
+        description "Initial revision of ${classPrefix} API";
+    }
+}
