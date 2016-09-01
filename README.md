@@ -15,16 +15,16 @@ Install the archetype into your local maven repo:
 You can use interactive mode to generate FAST Application project like this:
 
     mvn archetype:generate \
-        -DarchetypeGroupId=test.fast \
+        -DarchetypeGroupId=fast \
         -DarchetypeArtifactId=fast-app-archetype \
-        -DarchetypeVersion=1.0.0-SNAPSHOT
+        -DarchetypeVersion=1.0.3-Beryllium-SR3
 
 Or use non-interactive mode to generate FAST Application project like this:
 
     mvn archetype:generate \
-        -DarchetypeGroupId=test.fast \
+        -DarchetypeGroupId=fast \
         -DarchetypeArtifactId=fast-app-archetype \
-        -DarchetypeVersion=1.0.0-SNAPSHOT \
+        -DarchetypeVersion=1.0.3-Beryllium-SR3 \
         -DgroupId=fast.app \
         -DartifactId=simple-test \
         -Dversion=0.1.0-SNAPSHOT \
